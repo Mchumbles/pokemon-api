@@ -5,9 +5,7 @@ export interface Pokemon {
 }
 
 export interface PokemonCardProps {
-  id: number;
-  name: string;
-  sprite: string;
+  pokemon: Pokemon;
 }
 
 export interface PokemonListProps {
@@ -17,4 +15,8 @@ export interface PokemonListProps {
 export interface GenerationProps {
   currentGen: number;
   setGen: (gen: number) => void;
+}
+
+export interface SearchBarProps {
+  onSearch: (query: string) => void;
 }

@@ -2,13 +2,14 @@
 
 import { useState, useEffect } from "react";
 import { getPokemon } from "@/lib/getPokemon";
-import { Pokemon } from "@/types/interfaces";
+import { Pokemon, PokemonListProps } from "@/types/interfaces";
 import GenerationButtons from "@/components/GenerationButtons";
-import { PokemonListProps } from "@/types/interfaces";
+import SearchBar from "@/components/SearchBar";
 
 export default function PokemonList({ initialPokemon }: PokemonListProps) {
   const [currentGen, setCurrentGen] = useState(1);
   const [pokemonList, setPokemonList] = useState<Pokemon[]>(initialPokemon);
+  const [searchTerm, setSearchTerm] = useState("");
 
   useEffect(() => {
     async function fetchPokemon() {
@@ -22,11 +23,17 @@ export default function PokemonList({ initialPokemon }: PokemonListProps) {
     fetchPokemon();
   }, [currentGen, initialPokemon]);
 
+  const filteredPokemon = pokemonList.filter((pokemon) =>
+    pokemon.name.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
   return (
     <>
       <GenerationButtons currentGen={currentGen} setGen={setCurrentGen} />
+      <SearchBar onSearch={setSearchTerm} />
+
       <ul className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-        {pokemonList.map((pokemon) => (
+        {filteredPokemon.map((pokemon) => (
           <li key={pokemon.id} className="text-center">
             <p className="text-lg">{pokemon.name}</p>
             <img
