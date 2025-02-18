@@ -20,3 +20,12 @@ export interface GenerationProps {
 export interface SearchBarProps {
   onSearch: (query: string) => void;
 }
+
+export interface IndividualPokemonDetails {
+  id: number;
+  name: string;
+  height: number;
+  weight: number;
+  types: { type: { name: string } }[];
+  sprites: { front_default: string };
+}

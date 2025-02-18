@@ -5,6 +5,7 @@ import { getPokemon } from "@/lib/getPokemon";
 import { Pokemon, PokemonListProps } from "@/types/interfaces";
 import GenerationButtons from "@/components/GenerationButtons";
 import SearchBar from "@/components/SearchBar";
+import PokemonCard from "@/components/PokeCard";
 
 export default function PokemonList({ initialPokemon }: PokemonListProps) {
   const [currentGen, setCurrentGen] = useState(1);
@@ -34,14 +35,7 @@ export default function PokemonList({ initialPokemon }: PokemonListProps) {
 
       <ul className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
         {filteredPokemon.map((pokemon) => (
-          <li key={pokemon.id} className="text-center">
-            <p className="text-lg">{pokemon.name}</p>
-            <img
-              src={pokemon.sprite}
-              alt={pokemon.name}
-              className="w-32 h-32 mx-auto"
-            />
-          </li>
+          <PokemonCard key={pokemon.id} pokemon={pokemon} />
         ))}
       </ul>
     </>

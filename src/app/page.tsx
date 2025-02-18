@@ -7,9 +7,13 @@ export default async function Home() {
 
   return (
     <main className="container mx-auto p-4">
-      <h1 className="text-center text-4xl font-bold text-cyan-800 mt-10">
-        Pokémon
-      </h1>
+      <div className="flex justify-center">
+        <div className="rounded-lg bg-white bg-opacity-80 px-6 py-4">
+          <h1 className="text-center text-7xl font-bold text-yellow-500">
+            Pokémon
+          </h1>
+        </div>
+      </div>
       <PokemonList initialPokemon={initialPokemon} />
     </main>
   );
