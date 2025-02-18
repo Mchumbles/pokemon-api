@@ -1,14 +1,14 @@
+import axios from "axios";
+
 export async function getPokemonEvolutions(pokemonId: string) {
   try {
-    const speciesResponse = await fetch(
+    const speciesResponse = await axios.get(
       `https://pokeapi.co/api/v2/pokemon-species/${pokemonId}/`
     );
-    const speciesData = await speciesResponse.json();
+    const evoChainUrl = speciesResponse.data.evolution_chain.url;
 
-    const evoChainUrl = speciesData.evolution_chain.url;
-
-    const evoResponse = await fetch(evoChainUrl);
-    const evoData = await evoResponse.json();
+    const evoResponse = await axios.get(evoChainUrl);
+    const evoData = evoResponse.data;
 
     const evoChain = [];
     let currentEvo = evoData.chain;
