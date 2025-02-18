@@ -29,3 +29,9 @@ export interface IndividualPokemonDetails {
   types: { type: { name: string } }[];
   sprites: { front_default: string };
 }
+
+export interface EvolutionDetails {
+  id: string;
+  name: string;
+  sprite: string;
+}
