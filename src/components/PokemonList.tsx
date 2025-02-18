@@ -24,9 +24,14 @@ export default function PokemonList({ initialPokemon }: PokemonListProps) {
     fetchPokemon();
   }, [currentGen, initialPokemon]);
 
-  const filteredPokemon = pokemonList.filter((pokemon) =>
-    pokemon.name.toLowerCase().includes(searchTerm.toLowerCase())
-  );
+  const filteredPokemon = pokemonList.filter((pokemon) => {
+    const searchLower = searchTerm.toLowerCase();
+    const pokemonId = pokemon.id.toString();
+    const pokemonName = pokemon.name.toLowerCase();
+    return (
+      pokemonName.includes(searchLower) || pokemonId.startsWith(searchLower)
+    );
+  });
 
   return (
     <>
