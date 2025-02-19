@@ -1,6 +1,7 @@
 "use client";
 
 import { IndividualPokemonDetails } from "@/types/interfaces";
+import TypeBadge from "@/components/TypeBadge";
 
 interface IndividualPokeCardProps {
   pokemon: IndividualPokemonDetails;
@@ -19,11 +20,15 @@ export default function IndividualPokeCard({
         alt={pokemon.name}
         className="w-40 h-40 mx-auto"
       />
+
       <p className="mt-4 text-lg">Height: {pokemon.height / 10} m</p>
       <p className="text-lg">Weight: {pokemon.weight / 10} kg</p>
-      <p className="text-lg">
-        Types: {pokemon.types.map((t) => t.type.name).join(", ")}
-      </p>
+
+      <div className="flex justify-center gap-2 mt-3">
+        {pokemon.types.map((t) => (
+          <TypeBadge key={t.type.name} type={t.type.name} />
+        ))}
+      </div>
     </div>
   );
 }
