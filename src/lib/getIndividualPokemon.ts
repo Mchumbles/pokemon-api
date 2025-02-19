@@ -9,7 +9,7 @@ export async function getIndividualPokemon(
   try {
     const response = await axios.get(`${BASE_URL}/${id}`);
     return response.data;
-  } catch (error) {
+  } catch {
     throw new Error("Failed to fetch Pokémon");
   }
 }
