@@ -53,13 +53,16 @@ export default function PokemonPage() {
         {isLoadingEvolutions ? (
           <p>Loading evolutions...</p>
         ) : (
-          <div className="flex justify-center gap-4 mt-4">
+          <div
+            className="flex flex-wrap justify-center gap-4 mt-4"
+            style={{ maxWidth: "600px", margin: "0 auto" }}
+          >
             {evolutions.length > 0 ? (
               evolutions.map((evo) => (
                 <EvolutionPokeCard key={evo.id} evolution={evo} />
               ))
             ) : (
-              <p>No evolutions available.</p>
+              <p className="w-full text-center">No evolutions available.</p>
             )}
           </div>
         )}
