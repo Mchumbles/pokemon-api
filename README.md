@@ -17,11 +17,11 @@ Responsive Design – Works smoothly on both desktop and mobile.
 
 ## Tech Stack
 
-Framework: Next.js
-Language: TypeScript
-Styling: Tailwind CSS
-Data Fetching: PokéAPI, axios
-State Management: useState, useEffect
+Framework: Next.js  
+Language: TypeScript  
+Styling: Tailwind CSS  
+Data Fetching: PokéAPI, Axios  
+State Management: React Hooks (useState, useEffect)  
 Navigation: next/navigation
 
 ## Installation & Setup
@@ -67,7 +67,7 @@ http://localhost:3000
 
 This app retrieves Pokémon data from [PokéAPI](https://pokeapi.co/), a free and open-source Pokémon RESTful API.
 
-[PokéAPI](https://pokeapi.co/) provides detailed Pokémon information, including stats, abilities, evolutions, and sprites. You can check out their documentation [here](https://pokeapi.co/docs/v2).
+PokéAPI provides detailed Pokémon information, including stats, abilities, evolutions, and sprites. You can check out their documentation [here](https://pokeapi.co/docs/v2).
 
 ## License
 
