@@ -7,6 +7,10 @@ A simple, interactive Pokédex built with Next.js, TypeScript, and Tailwind CSS,
 - Navigate through evolution chains
 - Persist selected Pokémon generations
 
+## Live Demo
+
+[View Pokémon App](https://pokemoninformationapp.netlify.app/)
+
 ## Features & Usage
 
 Search Pokémon – Use the search bar to find Pokémon by name or number.
