@@ -7,7 +7,7 @@ export default function PokeCard({ pokemon }: PokemonCardProps) {
   return (
     <li className="bg-gray-400 border-4 rounded-lg border-yellow-400 transition-transform duration-300 hover:scale-105">
       <Link href={`/pokemon/${pokemon.id}`} className="block text-center ">
-        <p className="text-lg capitalize">
+        <p className="text-lg capitalize mt-2">
           #{pokemon.id} {pokemon.name}
         </p>
         <img

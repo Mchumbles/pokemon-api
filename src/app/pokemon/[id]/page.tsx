@@ -48,7 +48,9 @@ export default function PokemonPage() {
       <IndividualPokeCard pokemon={pokemon} />
 
       <div className="mt-6">
-        <h2 className="text-2xl font-bold text-gray-800">Evolutions</h2>
+        <h2 className="text-2xl font-bold text-cyan-900 bg-white bg-opacity-75 px-4 py-2 rounded-lg inline-block mb-6">
+          Evolutions
+        </h2>
 
         {isLoadingEvolutions ? (
           <p>Loading evolutions...</p>

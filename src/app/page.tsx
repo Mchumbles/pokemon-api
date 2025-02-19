@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { getPokemon } from "@/lib/getPokemon";
 import PokemonList from "@/components/PokemonList";
 import { Pokemon } from "@/types/interfaces";
@@ -9,13 +10,17 @@ export default async function Home() {
   return (
     <main className="container mx-auto p-4">
       <GitHub />
-      <div className="flex justify-center">
-        <div className="rounded-lg bg-white bg-opacity-80 px-6 py-4">
-          <h1 className="text-center text-7xl font-bold text-yellow-500">
-            Pokémon
-          </h1>
-        </div>
+
+      <div className="flex justify-center mb-6">
+        <Image
+          src="/images/Pokemon-Logo.png"
+          alt="Pokémon Logo"
+          width={600}
+          height={200}
+          className="w-3/4 md:w-1/2 lg:w-1/3 object-contain "
+        />
       </div>
+
       <PokemonList initialPokemon={initialPokemon} />
     </main>
   );

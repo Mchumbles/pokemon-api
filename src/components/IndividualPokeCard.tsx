@@ -12,7 +12,7 @@ export default function IndividualPokeCard({
 }: IndividualPokeCardProps) {
   return (
     <div className="bg-gray-400 border-4 rounded-lg border-yellow-400 p-6 mt-8 text-center max-w-sm mx-auto shadow-lg">
-      <h1 className="text-4xl font-bold text-cyan-800 capitalize">
+      <h1 className="text-4xl font-bold text-black capitalize">
         {pokemon.name}
       </h1>
       <img
